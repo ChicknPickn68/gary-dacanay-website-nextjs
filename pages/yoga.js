@@ -16,7 +16,8 @@ export default function Yoga() {
                 <p>I am a 500 Hour Certified Baptiste Yoga Instructor, serving the Cleveland community at Cleveland Public Schools and family recreation centers. I also teach in corporate settings, lead workshops and master classes, and facilitate private lessons.</p>
                 <Link href={"https://www.baptisteyoga.com/trainer-profile/?user=1910"}>Learn more</Link>
             </Section>
-            <Gallery imageSrcs={[yoga1, yoga2, yoga3]}/>
+            <Gallery imageSrcs={[yoga1, yoga2, yoga3]}>
+            </Gallery>
         </YogaPage>
     )
 }

@@ -11,6 +11,8 @@ import React from "react";
 import MusicPage from "@/components/view/MusicPage";
 import Venmo from "@/components/ui/Venmo";
 import Divider from "@/components/ui/Divider";
+import { Link } from "@/components/ui/Link";
+
 
 export default function Music() {
     return (
@@ -26,7 +28,9 @@ export default function Music() {
                     <Venmo tag="guitarfire"/>
                 </Section>
             </div>
-            <Gallery imageSrcs={[music0, music1, music2]}/>
+            <Gallery imageSrcs={[music0, music1, music2]}>
+                <Link href="https://www.exploredperspective.com/">Photos by Explored Perspective</Link>
+            </Gallery>
         </MusicPage>
     )
 }

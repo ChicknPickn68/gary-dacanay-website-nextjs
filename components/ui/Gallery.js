@@ -3,7 +3,7 @@ import Img from "@/components/ui/Img";
 import {motion} from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 
-export default function Gallery({imageSrcs}) {
+export default function Gallery({imageSrcs, children}) {
     const { ref, inView, entry } = useInView({
         threshold: 0,
     });
@@ -35,13 +35,18 @@ export default function Gallery({imageSrcs}) {
         }
     }
     return (
-        <motion.div ref={ref} initial={"initial"} animate={inView ? "animate" : ""} variants={list} className={styles.gallery}>
-            {imageSrcs.map((imageSrc, index) =>
-                <motion.div className={styles.wrapper} key={index} variants={listItem}>
-                    <Img src={imageSrc} layout={"responsive"}/>
-                </motion.div>
-            )}
-        </motion.div>
+        <div className={styles.container}> 
+            <motion.div ref={ref} initial={"initial"} animate={inView ? "animate" : ""} variants={list} className={styles.gallery}>
+                {imageSrcs.map((imageSrc, index) =>
+                    <motion.div className={styles.wrapper} key={index} variants={listItem}>
+                        <Img src={imageSrc} layout={"responsive"}/>
+                    </motion.div>
+                )}
+            </motion.div>
+            <div className={styles.content}>
+                {children}
+            </div>
+        </div>
     )
 }
 
